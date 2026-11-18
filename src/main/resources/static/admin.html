@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXORA | Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main style="max-width:1200px;margin:60px auto;padding:25px;">
+        <h1>NEXORA Admin Dashboard</h1>
+        <p>Manage customer enquiries from one place.</p>
+
+        <h2>Customer Enquiries</h2>
+        <p id="status">Loading enquiries...</p>
+
+        <div style="overflow-x:auto;">
+            <table border="1" cellpadding="12" cellspacing="0"
+                   style="width:100%;border-collapse:collapse;text-align:left;">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Company</th>
+                        <th>Service</th>
+                        <th>Message</th>
+                        <th>Received</th>
+                    </tr>
+                </thead>
+                <tbody id="enquiryTable"></tbody>
+            </table>
+        </div>
+
+        <button onclick="loadEnquiries()" style="margin-top:25px;">
+            Refresh Enquiries
+        </button>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>

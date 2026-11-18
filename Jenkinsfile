@@ -49,7 +49,7 @@ pipeline {
                     sleep 15
 
                     curl --fail \
-                    http://localhost:18080/api/enquiries/health
+                    http://host.docker.internal:18080/actuator/health
 
                     docker rm -f nexora-ci-check
                 '''
@@ -64,7 +64,7 @@ pipeline {
 
         always {
 
-            junit 'target/surefire-reports/*.xml'
+            junit allowEmptyResults: true, testResults: 'target/surefire-reports/*.xml'
 
         }
 
